@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>张瀚月-20002120320</title>
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
+    <style>
+        body,
+        ul,
+        li,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        span {
+            display: inline-block;
+        }
+
+        #footer #nav {
+            background-color: #fff;
+        }
+
+        #nav {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            z-index: 100;
+            display: flex;
+        }
+
+        #nav li {
+            margin-top: 6px;
+            width: 20%;
+            text-align: center;
+        }
+
+        #nav span {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #nav li:nth-child(5) a {
+            color: rgb(255, 0, 212);
+        }
+
+        #nav p {
+            font-size: 14px;
+        }
+
+        #header {
+            position: fixed;
+            width: 100%;
+            right: 0;
+            top: 0;
+            z-index: 100;
+            list-style: none;
+            display: flex;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, rgb(243, 194, 139), #fff);
+        }
+
+        #header div:nth-of-type(1) {
+            margin-top: 16px;
+            margin-bottom: 10px;
+            width: 60%;
+        }
+
+        #header div:nth-of-type(2) {
+            margin-top: 16px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            width: 40%;
+            text-align: right;
+
+        }
+
+        #header div:nth-of-type(2) span {
+            font-size: 26px;
+            margin: 0 8px;
+        }
+
+        #header div:nth-of-type(1) li {
+            margin-left: 10px;
+            text-align: center;
+            width: 80px;
+            font-size: 14px;
+            border: 1px solid #000;
+            border-radius: 50px;
+        }
+
+        #container {
+            background: linear-gradient(rgb(255, 255, 255), rgb(232, 232, 232));
+        }
+
+        .head {
+            display: flex;
+            margin-top: 52px;
+            width: 100%;
+        }
+
+        .head>div {
+            width: 18%;
+            text-align: right;
+        }
+
+        .head img {
+            margin-top: 12px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-left: 6px;
+            margin-right: 14px;
+        }
+
+        .head ul {
+            text-align: left;
+            margin-top: 17px;
+            width: 67%;
+        }
+
+        .home {
+            background-color: #fff;
+            color: black;
+            border-radius: 50px;
+            font-size: 14px;
+            padding: 4px 6px;
+            margin-top: 26px;
+            text-align: left;
+            width: 15%;
+            margin-right: -16px;
+        }
+
+        .head li:nth-of-type(1)>a {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .head li:nth-of-type(2) {
+            font-size: 14px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .vip {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .left {
+            border: 1px solid rgb(253, 202, 37);
+            width: 65%;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: rgba(253, 211, 72, 0.075);
+        }
+
+        .right {
+            background-color: #fff;
+            width: 35%;
+            border: 1px solid rgb(37, 138, 253);
+            border-radius: 10px;
+            margin: 12px 8px;
+        }
+
+        .left ul {
+            width: 50%;
+            float: left;
+
+        }
+
+        .left ul:nth-last-of-type(1) li {
+            border-left: 1px solid #666;
+        }
+
+        .vip ul {
+            text-align: center;
+            margin: 10px 0;
+
+        }
+
+        .vip ul li:nth-of-type(1) {
+            color: #000;
+            font-size: 14px;
+        }
+
+        .vip ul li:nth-of-type(2) {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .create {
+            background-color: #fff;
+            margin: 0 8px;
+            border-radius: 10px;
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+        .create ul {
+            display: flex;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .create li {
+            margin-top: 6px;
+            width: 25%;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .create p {
+            margin-top: 5px;
+        }
+
+        .create li:nth-of-type(3) p {
+            margin-top: 1px;
+        }
+
+        .create li:nth-of-type(4) p {
+            margin-top: 3px;
+        }
+
+        .create a {
+            color: #000;
+        }
+
+        .create span {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .create li:nth-of-type(1) span {
+            color: rgb(27, 122, 206);
+        }
+
+        .create li:nth-of-type(2) span {
+            color: rgb(27, 206, 123);
+        }
+
+        .create li:nth-of-type(3) span {
+            font-size: 34px;
+            color: rgba(176, 47, 235, 0.938);
+        }
+
+        .create li:nth-of-type(4) span {
+            font-size: 32px;
+            color: rgb(249, 91, 207);
+        }
+
+        .history {
+            background-color: #fff;
+            margin: 10px 8px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .history p {
+            margin: 10px 0 10px 12px;
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+        }
+
+        .more {
+            margin-right: 18px;
+            display: block;
+            margin-top: -36px;
+            float: right;
+        }
+
+        .history img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .history .swiper-wrapper {
+            margin: 0 12px;
+        }
+
+        .history .swiper-slide p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: rgb(0, 0, 0);
+            line-height: 16px;
+        }
+
+
+        .create1 {
+            background-color: #fff;
+            margin: 10px 8px;
+            border-radius: 10px;
+            border: 1px solid #fff;
+        }
+
+        .create1 ul {
+            display: flex;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .create1 li {
+            margin-top: 6px;
+            width: 25%;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .create1 p {
+            margin-top: 5px;
+        }
+
+        .create1 a {
+            color: #666;
+        }
+
+        .create1 span {
+            font-size: 28px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .stext .swiper-wrapper {
+            height: 90px;
+        }
+
+        .set .swiper-wrapper img {
+            width: 100%;
+        }
+
+        .set {
+            margin: 0 10px;
+
+        }
+
+        .box {
+            height: 200px;
+        }
+
+        .find {
+            margin: 0 10px;
+            border-radius: 12px;
+            background-color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .find ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .find li {
+            width: 46%;
+            margin-left: 10px;
+            flex-shrink: 1;
+        }
+
+        .find ul li:nth-of-type(2) {
+            flex-shrink: 0;
+        }
+
+        .find>p {
+            font-size: 18px;
+            padding: 10px 0 10px 12px;
+        }
+
+        .find img {
+            border-radius: 6px;
+            border: none;
+            display: block;
+            width: 100%;
+        }
+
+        .find li p {
+            font-size: 12px;
+            text-align: left;
+        }
+
+        .find a {
+            display: block;
+            font-size: 14px;
+            color: #000;
+            text-align: left;
+        }
+
+        .bot {
+            background-color: #fff;
+            margin-bottom: 90px;
+        }
+
+        .bot p {
+            text-align: center;
+            font-size: 14px;
+            color: #ccc;
+            padding-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div>
+            <ul>
+                <li><span class="iconfont icon-jiantou_shangxiaqiehuan_o"></span>切换模式</li>
+            </ul>
+        </div>
+        <div>
+            <span class="iconfont icon-saoyisao1"></span>
+            <span class="iconfont icon-xiaoxizhongxin"></span>
+        </div>
+    </div>
+    <div id="container">
+        <div class="head">
+            <div><img src="img/toux1.jpg"></div>
+            <ul>
+                <li><a href="join.html">登录/注册</a></li>
+                <li>获赞0 关注0 粉丝0</li>
+            </ul>
+            <a href="#" class="home">主页<span class="iconfont icon-home"></span></a>
+        </div>
+        <div class="vip">
+            <div class="left">
+                <ul>
+                    <li>首3月每月10元</li>
+                    <li>特惠购会员</li>
+                </ul>
+                <ul>
+                    <li>年卡7折</li>
+                    <li>畅享一年好剧</li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>首月1元</li>
+                    <li>VIP月月省</li>
+                </ul>
+            </div>
+        </div>
+        <div class="create">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-xiazai-wenjianxiazai-04"></span>
+                        <p>我的下载</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-shoucang"></span>
+                        <p>已追收藏</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-qingdan"></span>
+                        <p>我的购买</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-shipin3"></span>
+                        <p>我的场景</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="history">
+            <p>历史记录</p>
+            <a href="#" class="more">更多<span class="iconfont icon-home"></span></a>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/TV1.jpg"></a>
+                        <p>甄嬛传 第61集</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV2.png"></a>
+                        <p>小敏家 第11集</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV3.png"></a>
+                        <p>人民的名义 第5集</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV4.png"></a>
+                        <p>星河长明 第6集</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV5.png"></a>
+                        <p>三生三世十里桃花 第8集</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV6.png"></a>
+                        <p>极限挑战 第11期</p></div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV7.png"></a>
+                        <p>长安十二时辰 第5集</p></div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV3.png"></a>
+                        <p>小敏家 第11集</p></div>
+                </div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+        </div>
+        <div class="set">
+            <div class="swiper stext">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/swiper4.png"></div>
+                    <div class="swiper-slide"><img src="img/swiper2.png"></div>
+                    <div class="swiper-slide"><img src="img/swiper3.png"></div>
+                    <div class="swiper-slide"><img src="img/swiper4.png"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="create1">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-shezhi"></span>
+                        <p>设置</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-kefu"></span>
+                        <p>我的客服</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-wenjuan1"></span>
+                        <p>有奖调研</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-yk_gantanhao"></span>
+                        <p>意见反馈</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="find">
+            <p>发现更多</p>
+            <ul>
+                <li>
+                    <a href="#"><img src="img/find2.jpg"></a>
+                    <p>联合会员</p>
+                    <a href="#">1分价格 2份权益~</a>
+                </li>
+                <li>
+                    <img src="img/find1.jpg">
+                    <p>剧本杀</p>
+                    <a href="#">酷酷剧本 高质测评</a>
+                </li>
+                <li>
+                    <img src="img/find2.jpg">
+                    <p>联合会员</p>
+                    <a href="#">1分价格 2份权益~</a>
+                </li>
+                <li>
+                    <img src="img/find1.jpg">
+                    <p>剧本杀</p>
+                    <a href="#">酷酷剧本 高质测评</a>
+                </li>
+                <li>
+                    <img src="img/find2.jpg">
+                    <p>联合会员</p>
+                    <a href="#">1分价格 2份权益~</a>
+                </li>
+                <li>
+                    <img src="img/find1.jpg">
+                    <p>剧本杀</p>
+                    <a href="#">酷酷剧本 高质测评</a>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="bot">
+            <p>已经到底啦!不如去看看其他精彩内容~</p>
+        </div>
+    </div>
+    <div id="footer">
+        <!-- 底部固定导航 -->
+        <ul id="nav">
+            <li>
+                <a href="#">
+                    <span class="iconfont icon-shouye"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="video.html">
+                    <span class="iconfont icon-shipin"></span>
+                    <p>短视频</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="iconfont icon-huiyuan1"></span>
+                    <p>会员</p>
+                </a>
+            </li>
+            <li>
+                <a href="news.html">
+                    <span class="iconfont icon-xiaoxizhongxin
+                  "></span>
+                    <p>消息</p>
+                </a>
+            </li>
+            <li>
+                <a href="my.html">
+                    <span class="iconfont icon-wode"></span>
+                    <p>我的</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+
+
+
+    <script src="swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 6,
+            //   pagination: {
+            //     el: ".swiper-pagination",
+            //     clickable: true,
+            //   },
+        });
+
+        var swiper = new Swiper(".stext", {
+            direction: "vertical",
+            // pagination: {
+            //     el: ".swiper-pagination",
+            //     clickable: true,
+            // },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+
+</html>

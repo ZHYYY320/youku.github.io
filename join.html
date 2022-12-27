@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>张瀚月-20002120320</title>
+    <link rel="stylesheet" href="icon/iconfont.css">
+</head>
+<style>
+    body,
+    ul,
+    h1,
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    span {
+        display: inline-block;
+    }
+
+    #nav {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        display: flex;
+    }
+
+    #nav li:nth-of-type(1) {
+        margin-top: 6px;
+        margin-left: 10px;
+        width: 10%;
+
+    }
+
+    #nav span {
+        display: inline-block;
+        font-size: 32px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    #nav li:nth-of-type(2) {
+        margin-top: 6px;
+        width: 70%;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    #nav li:nth-of-type(3) {
+        margin-top: 10px;
+        width: 20%;
+        text-align: right;
+    }
+
+    #nav li:nth-of-type(3) a {
+        color: #000;
+        font-size: 14px;
+    }
+
+    .logo {
+        display: flex;
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .logo h1 {
+        width: 50%;
+        font-size: 48px;
+    }
+
+    .logo h1:nth-of-type(1) {
+        text-align: right;
+        color: #ff0099;
+    }
+
+    .logo h1:nth-of-type(2) {
+        color: rgb(0, 153, 255);
+    }
+
+    #sub {
+        border: none;
+        width: 100%;
+        border-radius: 50px;
+        height: 50px;
+        font-size: 18px;
+        background-color: #ff0099;
+        color: #fff;
+    }
+
+    #login div {
+        display: flex;
+        border-bottom: 1px solid #666;
+        margin: 20px 26px;
+    }
+
+    #login div:nth-of-type(3) {
+        border: none;
+    }
+
+    #login div:nth-of-type(4) {
+        border: none;
+    }
+
+    #login div:nth-of-type(4) a {
+        width: 100%;
+        text-align: center;
+        color: #ff0099;
+        font-size: 14px;
+        margin-top: -10px;
+    }
+
+    #city {
+        height: 38px;
+        border: none;
+        outline: 0;
+    }
+
+    .num {
+        outline: 0;
+        border: none;
+        color: #000;
+        padding-left: 80px;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #ccc;
+    }
+
+    .input {
+        width: 68%;
+        outline: 0;
+        color: #000;
+        border: none;
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+
+    .error {
+        display: inline-block;
+        width: 55%;
+        margin-top: -1px;
+        display: none;
+        position: absolute;
+        text-align: right;
+        color: rgb(255, 0, 30);
+        font-size: 14px;
+    }
+
+    #login div:nth-of-type(1) .error {
+        margin-top: 7px;
+        width: 80%;
+    }
+
+    #btn {
+        text-align: right;
+        width: 32%;
+        color: #ff0099;
+        border: none;
+        background-color: #fff;
+        padding-bottom: 10px;
+        position: relative;
+    }
+
+    .footer ul {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+    }
+
+    .footer li {
+        font-size: 14px;
+        width: 50%;
+    }
+
+    .footer li:nth-of-type(1) {
+        text-align: right;
+        color: #ccc;
+    }
+
+    .footer a {
+        color: #666;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <ul id="nav">
+            <li><a href="my.html"><span class="iconfont icon-fanhui"></span></a></li>
+            <li>手机快捷登录</li>
+            <li><a href="#">遇到问题？</a></li>
+        </ul>
+    </div>
+
+    <div class="logo">
+        <h1>YOU</h1>
+        <h1>KU</h1>
+    </div>
+    <form id="login">
+        <div>
+            <select name="city" id="city">
+                <option>+86</option>
+                <option>+86</option>
+                <option>+86</option>
+                <option>+86</option>
+                <option>+86</option>
+            </select>
+            <input type="text" name="num" id="num" placeholder="请输入手机号码" class="num">
+            <span class="error">手机号输入错误</span>
+        </div>
+        <div>
+            <input type="text" name="code" id="code" placeholder="请输入验证码" class="input"><span
+                class="error">验证码不正确</span>
+            <input type="button" id="btn" value="获取验证码" onclick="settime(this)" />
+        </div>
+
+        <div>
+            <input type="submit" id="sub" value="登录">
+        </div>
+        <div>
+            <a href="#">账号登陆</a>
+        </div>
+    </form>
+
+    <div class="footer">
+        <ul>
+            <li>登录遇到问题？</li>
+            <li><a href="#">点这里联系客服</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // DOM:document object model（文档对象模型）
+        var num = document.getElementById("num");
+        var error = document.getElementsByClassName("error");/* 类数组 */
+        var code = document.getElementById("code");
+
+        // 事件；onchange：内容改变；onblur：失去焦点；onfoucs：获得焦点
+        num.onchange = checknum; /* 函数的名称，不是函数调用 */
+        code.onchange = checkcode;
+
+
+        function checknum() {
+            if (num.value.length == 11) {
+                error[0].style.display = "none";
+                return 1;
+            }
+
+            else {
+                error[0].style.display = "block";
+                return 0;
+            }
+        }
+
+        function checkcode() {
+            if (code.value.length == 6) {
+                error[1].style.display = "none";
+                return 1;
+            }
+            else {
+                error[1].style.display = "block";
+                return 0;
+            }
+        }
+
+        function checkform() {
+            var rs = checknum() * checkcode();
+            if (rs == 0) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        var countdown = 60;
+        function settime(val) {
+            if (countdown == 0) {
+                val.removeAttribute("disabled");
+                val.value = "获取验证码";
+                countdown = 60;
+            }
+            else {
+                val.setAttribute("disabled", true);
+                val.value = "" + countdown + "s后重新获取";
+                countdown--;
+            }
+            setTimeout(function () {
+                settime(val)
+            }, 1000)
+        }
+
+
+    </script>
+
+</body>
+
+</html>

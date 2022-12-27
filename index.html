@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title></title>
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
+    <style>
+        body,
+        ul,
+        p,
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        span {
+            display: inline-block;
+        }
+
+        img {
+            display: block;
+            border: none;
+        }
+
+        #nav {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            z-index: 100;
+            display: flex;
+            background-color: #fff;
+        }
+
+        #nav li {
+            width: 20%;
+            text-align: center;
+        }
+
+        #nav span {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #nav li:nth-of-type(1) a {
+            color: #ff0099;
+        }
+
+        #nav p {
+            font-size: 14px;
+        }
+
+        #head form {
+            display: flex;
+            flex-grow: 1;
+            margin: 5px 20px 5px 30px;
+        }
+
+        #head div {
+            flex-grow: 1;
+            display: flex;
+            background-color: #999;
+            border-radius: 40px;
+            padding: 3px 10px;
+            line-height: 20px;
+        }
+
+        #head div .icon-sousuo {
+            display: inline-block;
+            font-size: 16px;
+            padding: 3px;
+        }
+
+        #head div #search {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            background-color: #999;
+        }
+
+        #head #sub {
+            font-size: 14px;
+            width: 36px;
+            line-height: 26px;
+            border: none;
+            background-color: #999;
+
+        }
+
+        #xiazai {
+            margin-top: 4px;
+            margin-left: 12px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        #lishi1 {
+            margin-top: 4px;
+            margin-left: 12px;
+            font-size: 30px;
+            margin-right: 12px;
+        }
+
+        /* banner style */
+        .banner.swipermySwiper {
+            display: flex;
+        }
+
+        .banner .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            /* 居中排列 */
+            align-items: center;
+            /* 定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式 */
+            position: relative;
+        }
+
+        .banner .swiper-slide img {
+            width: 94%;
+            height: 94%;
+            object-fit: cover;
+            border-radius: 20px;
+
+        }
+
+        .banner .swiper-slide a {
+            display: block;
+            position: absolute;
+            color: #fff;
+            font-size: 2.8vw;
+            margin-left: 66px;
+            margin-bottom: 20px;
+            bottom: 0;
+            left: 0;
+        }
+    
+        .headnav {
+            width: 100%;
+            z-index: 10;
+            top: 0;
+            left: 0;
+        }
+
+        .headnav ul {
+            display: flex;
+            width: 100%;
+            margin: 16px 10px;
+        }
+
+        .headnav li {
+            width: 12.4%;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .headnav li:nth-of-type(3) {
+            width: 13%;
+        }
+
+        .headnav li:nth-of-type(2) {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: -4px;
+            margin-left: -2px;
+            margin-right: 2px;
+            color: #000;
+        }
+
+        .headnav span {
+            font-size: 22px;
+            margin-right: 14px;
+        }
+
+        .maylike {
+            margin: 10px 8px;
+            overflow: hidden;
+        }
+
+        .maylike>p {
+            margin: 10px 0 10px 12px;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .more {
+            margin-right: 16px;
+            display: block;
+            margin-top: -36px;
+            float: right;
+        }
+
+        .maylike img {
+            width: 100%;
+            border-radius: 8px;
+
+        }
+
+        .maylike .gengxin {
+            margin-top: -20px;
+            position: relative;
+        }
+
+        .maylike .gengxin #gx {
+            font-size: 12px;
+            color: #fff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-align: right;
+            white-space: nowrap;
+            /* 文本溢出 */
+            padding-right: 4px;
+        }
+
+        .maylike .swiper-wrapper {
+            margin: 0 12px;
+        }
+
+        .maylike .swiper-slide p {
+            font-size: 13px;
+            color: #666;
+            line-height: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            /* 文本溢出 */
+        }
+
+        .maylike .swiper-slide a:nth-of-type(2) {
+            margin-top: 8px;
+            font-size: 14px;
+            color: rgb(0, 0, 0);
+        }
+
+        .hot {
+            margin: 10px 8px;
+            margin-bottom: 60px;
+        }
+
+        .hot>p {
+            margin: 10px 0 10px 12px;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .mlist {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .mlist li {
+            text-align: left;
+            width: 28%;
+            padding: 0 8px;
+            flex-shrink: 1;
+
+        }
+
+        .mlist img {
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        .mlist li>p {
+            font-size: 13px;
+            text-align: left;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            /* 溢出用省略号显示 */
+            overflow: hidden;
+        }
+
+        .mlist li a:nth-of-type(2) {
+            display: block;
+            margin-top: 8px;
+            font-size: 14px;
+            color: rgb(0, 0, 0);
+        }
+
+        .text {
+            margin-top: -20px;
+            position: relative;
+        }
+
+        #type {
+            color: #fff;
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            /* 文本溢出 */
+            padding-right: 4px;
+            text-align: right;
+        }
+
+        #box {
+            position: fixed;
+            display: none;
+            z-index: 11;
+            right: 0;
+            top: 500px;
+            margin-right: 20px;
+        }
+
+        #box button {
+            border: none;
+            outline: none;
+            /*清除默认背景 */
+            background-color: #fff;
+        }
+
+        #box span {
+            font-size: 32px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">
+        <form action="#" name="#">
+            <div>
+                <label for="search">
+                    <span class="iconfont icon-sousuo"></span>
+                </label>
+                <input type="text" name="search" id="search" placeholder="请输入" required>
+
+                <input type="submit" value="搜索" id="sub">
+            </div>
+
+            <span id="xiazai" class="iconfont icon-w_xiazai"></span>
+            <span id="lishi1" class="iconfont icon-lishi1"></span>
+        </form>
+    </div>
+    <div class="headnav">
+        <ul>
+            <li><a href="#">热门</a></li>
+            <li><a href="#">精选</a></li>
+            <li><a href="#">电视剧</a></li>
+            <li><a href="#">电影</a></li>
+            <li><a href="#">综艺</a></li>
+            <li><a href="#">动漫</a></li>
+            <li><a href="#">经典</a></li>
+            <li><a href="#"><span class="iconfont icon-danlieliebiao"></span></a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="banner">
+            <div class="swiper mySwiper"><!-- banner -->
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/banner1.jpg">
+                        <a href="#">&lt;那山那海&gt;山海共情脱贫致富</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/banner2.jpg">
+                        <a href="#">&lt;黑鹰少年&gt;因为热爱无惧艰难</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/banner3.jpg">
+                        <a href="#">&lt;这十年&gt;见证中国巨变</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/banner4.jpg">
+                        <a href="#">&lt;特级英雄黄继光&gt;致敬“最可爱的人”</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/banner5.jpg">
+                        <a href="#">&lt;勇士连&gt;22勇士飞夺天险泸定桥</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/banner6.jpg">
+                        <a href="#">李冰冰黄晓明极限营救</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/banner7.jpg">
+                        <a href="#">甄子丹舍命救子“以命换命”</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/banner8.jpg">
+                        <a href="#">&lt;山河锦秀&gt;再现脱贫决战画卷</a>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="maylike">
+            <p>猜你在追</p>
+            <a href="#" class="more">查看全部<span class="iconfont icon-home"></span></a>
+            <div class="swiper baSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/TV1.jpg"></a>
+                        <div class="gengxin">
+                            <p id="gx">76集全</p>
+                        </div>
+                        <a href="#">甄嬛传</a>
+                        <p>孙俪谱写帝后传奇</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV2.png"></a>
+                        <div class="gengxin">
+                            <p id="gx">45集全</p>
+                        </div>
+                        <a href="#">小敏家 TV版</a>
+                        <p>刘小敏陈卓解决各种难题</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV3.png"></a>
+                        <div class="gengxin">
+                            <p id="gx">52集全</p>
+                        </div>
+                        <a href="#">人民的名义</a>
+                        <p>陆毅领衔上演反腐大战</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV4.png"></a>
+                        <div class="gengxin">
+                            <p id="gx">25集全</p>
+                        </div>
+                        <a href="#">星河长明</a>
+                        <p>弃女成倾世皇妃</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/TV5.png"></a>
+                        <div class="gengxin">
+                            <p id="gx">更新至12-18期</p>
+                        </div>
+                        <a href="#">三生三世十里桃花</a>
+                        <p>三生爱恨牵引三世纠葛</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV6.png"></a>
+                        <div class="gengxin">
+                            <p id="gx">更新至12-18期</p>
+                        </div>
+                        <a href="#">极挑🤣终极对决</a>
+                        <p>小岳岳“手撕”气球累瘫了</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV4.png"></a>
+                        <div class="gengxin">
+                            <p id="gx">25集全</p>
+                        </div>
+                        <a href="#">星河长明</a>
+                        <p>弃女成倾世皇妃</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV3.png"></a>
+                        <div class="gengxin">
+                            <p id="gx">52集全</p>
+                        </div>
+                        <a href="#">人民的名义 TV版</a>
+                        <p>陆毅领衔上演反腐大战</p>
+                    </div>
+                    <div class="swiper-slide"><a href="#"><img src="img/TV3.png"></a>
+                        <div class="gengxin">
+                            <p id="gx">52集全</p>
+                        </div>
+                        <a href="#">人民的名义 TV版</a>
+                        <p>陆毅领衔上演反腐大战</p>
+                    </div>
+                </div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+        </div>
+        <div class="hot">
+            <p>精彩热播</p>
+            <ul class="mlist">
+                <!-- <li>
+                    <a href="#"><img src="img/my/zhenhuan.jpg" ></a>
+                    <div class="text">
+                        <p id="type">更新至12-18期</p>
+                    </div>
+                    <a href="#">点燃我温暖你</a>
+                    <p>点燃我温暖你 第1集</p>
+                </li> -->
+            </ul>
+        </div>
+
+    </div>
+    <div id="box"><button><span class="iconfont icon-fanhuidingbu"></span></button></div>
+    <div id="footer">
+        <!-- 底部固定导航 -->
+        <ul id="nav">
+            <li>
+                <a href="index.html">
+                    <span class="iconfont icon-shouye"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="video.html">
+                    <span class="iconfont icon-shipin"></span>
+                    <p>短视频</p>
+                </a>
+            </li>
+            <li>
+                <a href="vip.html">
+                    <span class="iconfont icon-huiyuan1"></span>
+                    <p>会员</p>
+                </a>
+            </li>
+            <li>
+                <a href="news.html">
+                    <span class="iconfont icon-xiaoxizhongxin
+                    "></span>
+                    <p>消息</p>
+                </a>
+            </li>
+            <li>
+                <a href="my.html">
+                    <span class="iconfont icon-wode"></span>
+                    <p>我的</p>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <script src="swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        // banner
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+        });
+
+        var swiper = new Swiper(".baSwiper", {
+            slidesPerView: 4,
+            spaceBetween: 6,
+            //   pagination: {
+            //     el: ".swiper-pagination",
+            //     clickable: true,
+            //   },
+        });
+
+        var json = [
+            {
+                img: "img/TV6.png",
+                title: "极限挑战",
+                content: "小岳岳“手撕”气球累瘫了",
+                type: "更新至第11期"
+            },
+            {
+                img: "img/TV2.png",
+                title: "小敏家 TV版",
+                content: "刘小敏陈卓解决各种难题",
+                type: "45集全"
+            },
+            {
+                img: "img/TV3.png",
+                title: "人民的名义",
+                content: "陆毅领衔上演反腐大战",
+                type: "52集全"
+            },
+            {
+                img: "img/TV4.png",
+                title: "星河长明",
+                content: "弃女成倾世皇妃",
+                type: "25集全"
+            },
+            {
+                img: "img/TV1.jpg",
+                title: "甄嬛传",
+                content: "嬛嬛，朕emo啦",
+                type: "73集全"
+            },
+            {
+                img: "img/TV7.png",
+                title: "长安十二时辰",
+                content: "雷佳音千玺携手护长安",
+                type: "48集全"
+            },
+            {
+                img: "img/TV6.png",
+                title: "极限挑战",
+                content: "小岳岳“手撕”气球累瘫了",
+                type: "更新至第11期"
+            },
+            {
+                img: "img/TV2.png",
+                title: "小敏家 TV版",
+                content: "刘小敏陈卓解决各种难题",
+                type: "45集全"
+            },
+            {
+                img: "img/TV3.png",
+                title: "人民的名义",
+                content: "陆毅领衔上演反腐大战",
+                type: "52集全"
+            },
+            {
+                img: "img/TV4.png",
+                title: "星河长明",
+                content: "弃女成倾世皇妃",
+                type: "25集全"
+            },
+            {
+                img: "img/TV1.jpg",
+                title: "甄嬛传",
+                content: "胖橘和嬛嬛的爱恨情仇",
+                type: "73集全"
+            },
+            {
+                img: "img/TV7.png",
+                title: "长安十二时辰",
+                content: "雷佳音千玺携手护长安",
+                type: "48集全"
+            }
+        ];
+
+        var ul = document.getElementsByClassName("hot")[0].getElementsByTagName("ul")[0];
+
+        function addLI(li) {
+            var n = `
+            <a href="#"><img src="${li.img}"></a>
+            <div class="text">
+             <p id="type">${li.type}</p>
+            </div>
+            <a>${li.title}</a>
+            <p>${li.content}</p>
+        `;
+
+            var nli = document.createElement("li");
+            nli.innerHTML = n;
+            ul.appendChild(nli);
+        }
+
+        for (var i = 0; i < json.length; i++) {
+            addLI(json[i])
+        }
+    </script>
+
+    <script>
+        window.onscroll = function () {
+            var st = document.documentElement.scrollTop || document.body.scrollTop;
+
+
+            if (st > head.offsetHeight) {
+                box.style.display = "block";
+            }
+            else {
+                box.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+
+        var timer;
+
+        btn.addEventListener("click", function () {
+            timer = requestAnimationFrame(function animation() {
+                var st = document.documentElement.scrollTop || document.body.scrollTop;
+                if (st > 0) {
+                    scrollTo(0, st - 30);
+                    timer = requestAnimationFrame(animation);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

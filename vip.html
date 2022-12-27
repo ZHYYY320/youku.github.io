@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>张瀚月-20002120320</title>
+  <link rel="stylesheet" href="icon/iconfont.css">
+  <style>
+    body,
+    ul,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #666;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    img {
+      display: block;
+      border: none;
+    }
+
+    /* head,footer style */
+    #nav {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      z-index: 100;
+      display: flex;
+      background-color: #1d2029;
+    }
+
+    #nav li {
+      margin-top: 6px;
+      width: 20%;
+      text-align: center;
+    }
+
+    #nav span {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    #nav li:nth-child(3) a {
+      color: #ffcc66;
+    }
+
+    #nav p {
+      font-size: 14px;
+    }
+
+
+    .headnav {
+      padding-top: 10px;
+      position: fixed;
+      width: 100%;
+      right: 0;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #1a1b20;
+    }
+
+    .headnav li {
+      width: 12.3%;
+      text-align: center;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .headnav li:nth-of-type(2) {
+      width: 12.8%;
+    }
+
+    .headnav li:nth-of-type(5) {
+      width: 12.8%;
+    }
+
+    .headnav li:nth-of-type(1) {
+      width: 12.8%;
+      font-size: 20px;
+      margin-top: -4px;
+      color: #ffcc66;
+    }
+
+    .headnav span {
+      font-size: 26px;
+    }
+
+    #content {
+      background-color: #1a1b20;
+    }
+
+    .banner {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .banner>div {
+      position: relative;
+    }
+
+    .banner img {
+      display: block;
+      width: 100%;
+    }
+
+    .banner>div a {
+      display: block;
+      position: absolute;
+      color: #fff;
+      font-size: 2.6vw;
+      margin-left: 66px;
+      margin-bottom: 20px;
+      bottom: 0;
+      left: 0;
+    }
+
+    .head {
+      margin: 0 10px;
+      display: flex;
+      background-color: #242730;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .head div:nth-of-type(1) {
+      width: 18%;
+      display: flex;
+      justify-content: right;
+    }
+
+    .head img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+    }
+
+    .head ul {
+      text-align: left;
+      margin-top: 17px;
+      width: 57%;
+      margin-left: 4px;
+    }
+
+    .head li {
+      color: rgb(227, 227, 227);
+    }
+
+    .head li:nth-of-type(2) {
+      font-size: 12px;
+    }
+
+    .head div:nth-of-type(2) {
+      width: 25%;
+    }
+
+    .head div:nth-of-type(2) span {
+      padding: 6px 18px;
+      background-color: #ffcc66;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .hot {
+      margin: 10px 8px;
+    }
+
+    .hot>p {
+      margin: 10px 0 10px 12px;
+      font-size: 20px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .mlist {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .mlist li {
+      margin-top: 10px;
+      text-align: left;
+      width: 28%;
+      padding: 0 8px;
+      flex-shrink: 1;
+
+    }
+
+    .mlist img {
+      border-radius: 6px;
+      width: 100%;
+    }
+
+    .mlist li>p {
+      font-size: 13px;
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      /* 溢出用省略号显示 */
+      overflow: hidden;
+      color: rgb(227, 227, 227);
+    }
+
+    .mlist li a:nth-of-type(2) {
+      display: block;
+      margin-top: 8px;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .text {
+      margin-top: -20px;
+      position: relative;
+    }
+
+    #type {
+      color: #fff;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      /* 文本溢出 */
+      padding-right: 4px;
+      text-align: right;
+    }
+
+    .box>p {
+      margin: 10px 0 10px 12px;
+      font-size: 20px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .box {
+      margin: 0 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tab {
+      width: 100%;
+      margin: 0px auto;
+    }
+
+    .tt {
+      display: flex;
+    }
+
+    .tt>span {
+      margin: 0 10px;
+      display: inline-block;
+      width: 25%;
+      text-align: center;
+      line-height: 32px;
+      flex-grow: 1;
+      color: #fff;
+    }
+
+    .tt>.cur {
+      color: #ffcc66;
+      margin-bottom: -1px;
+    }
+
+    .tc {
+      border-top: none;
+      text-align: center;
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .bot {
+      padding-top: 20px;
+      padding-bottom: 90px;
+    }
+
+    .bot p {
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="head">
+    <ul class="headnav">
+      <li>精选</li>
+      <li>值得看</li>
+      <li>帧享</li>
+      <li>电影</li>
+      <li>电视剧</li>
+      <li>综艺</li>
+      <li>动漫</li>
+      <li><span class="iconfont icon-sousuo"></span> </li>
+    </ul>
+  </div>
+
+  <div id="content">
+    <div class="banner">
+      <div><img src="img/banner1.jpg">
+        <a href="#">&lt;那山那海&gt;山海共情脱贫致富</a>
+      </div>
+
+    </div>
+    <div class="head">
+      <div><img src="img/toux1.jpg"></div>
+      <ul>
+        <li>立即登录</li>
+        <li>开通会员海量片库</li>
+      </ul>
+      <div>
+        <span>升级</span>
+      </div>
+
+    </div>
+    <div class="hot">
+      <p>优酷VIP专属热播</p>
+      <ul class="mlist">
+        <!-- <li>
+              <a href="#"><img src="img/" ></a>
+              <div class="text">
+                  <p id="type">更新至12-18期</p>
+              </div>
+              <a href="#">点燃我温暖你</a>
+              <p>点燃我温暖你 第1集</p>
+          </li> -->
+      </ul>
+    </div>
+    <div class="box">
+      <p>优酷VIP今日排行榜</p>
+      <div class="tab">
+        <div class="tt">
+          <span class="cur">热播榜</span>
+          <span>高分榜</span>
+          <span>飙升榜</span>
+          <span>港片榜</span>
+        </div>
+
+        <div class="tc show">
+          <ul class="mlist">
+            <li>
+              <a href="#"><img src="img/hot1.jpg"></a>
+              <div class="text">
+                <p id="type">25集全</p>
+              </div>
+              <a href="#">星河长明</a>
+              <p>陪嫁丫鬟成倾世皇妃</p>
+            </li>
+            <li>
+              <a href="#"><img src="img/hot2.png"></a>
+              <div class="text">
+                <p id="type">36集全</p>
+              </div>
+              <a href="#">点燃我温暖你</a>
+              <p>陈飞宇张静宜互怼生情</p>
+            </li>
+            <li>
+              <a href="#"><img src="img/hot3.jpg"></a>
+              <div class="text">
+                <p id="type">更新至31集</p>
+              </div>
+              <a href="#">刘老根 第五部</a>
+              <p>小小山庄的百态人生</p>
+            </li>
+          </ul>
+        </div>
+        <div class="tc">
+          <ul class="mlist">
+            <li>
+              <a href="#"><img src="img/gao1.jpg"></a>
+              <a href="#">扫黑行动</a>
+              <p>群星云集上演扫黑除恶</p>
+            </li>
+            <li>
+              <a href="#"><img src="img/gao2.jpg"></a>
+              <a href="#">万里归途</a>
+              <p>张译王俊凯逆行撤侨</p>
+            </li>
+            <li>
+              <a href="#"><img src="img/gao3.jpg"></a>
+              <a href="#">明日战记</a>
+              <p>机甲军团拯救地球</p>
+            </li>
+          </ul>
+        </div>
+        <div class="tc">
+          <ul class="mlist">
+            <li>
+              <a href="#"><img src="img/biao1.jpg"></a>
+              <div class="text">
+                <p id="type">更新至12-18期</p>
+              </div>
+              <a href="#">点燃我温暖你</a>
+              <p>点燃我温暖你 第1集</p>
+            </li>
+            <li>
+              <a href="#"><img src="img/biao2.jpg"></a>
+              <div class="text">
+                <p id="type">更新至12-18期</p>
+              </div>
+              <a href="#">点燃我温暖你</a>
+              <p>点燃我温暖你 第1集</p>
+            </li>
+            <li>
+              <a href="#"><img src="img/biao3.png"></a>
+              <div class="text">
+                <p id="type">更新至12-18期</p>
+              </div>
+              <a href="#">点燃我温暖你</a>
+              <p>点燃我温暖你 第1集</p>
+            </li>
+          </ul>
+        </div>
+        <div class="tc">
+          <ul class="mlist">
+            <li>
+              <a href="#"><img src="img/gang1.jpg"></a>
+              <div class="text">
+                <p id="type">30集全</p>
+              </div>
+              <a href="#">家族荣誉</a>
+              <p>豪门复仇伦理爽剧</p>
+            </li>
+            <li>
+              <a href="#"><img src="img/gang2.jpg"></a>
+              <div class="text">
+                <p id="type">30集全</p>
+              </div>
+              <a href="#">飞虎之壮志英雄</a>
+              <p>飞虎天团热血回归</p>
+            </li>
+            <li>
+              <a href="#"><img src="img/gang3.jpg"></a>
+              <div class="text">
+                <p id="type">30集全</p>
+              </div>
+              <a href="#">铁拳英雄</a>
+              <p>华人奋战唐人街</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bot">
+      <p>已经到底啦!不如去看看其他精彩内容~</p>
+    </div>
+  </div>
+  <div id="footer">
+    <!-- 底部固定导航 -->
+    <ul id="nav">
+      <li>
+        <a href="index.html">
+          <span class="iconfont icon-shouye"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="video.html">
+          <span class="iconfont icon-shipin"></span>
+          <p>短视频</p>
+        </a>
+      </li>
+      <li>
+        <a href="vip.html">
+          <span class="iconfont icon-huiyuan1"></span>
+          <p>会员</p>
+        </a>
+      </li>
+      <li>
+        <a href="news.html">
+          <span class="iconfont icon-xiaoxizhongxin
+                    "></span>
+          <p>消息</p>
+        </a>
+      </li>
+      <li>
+        <a href="my.html">
+          <span class="iconfont icon-wode"></span>
+          <p>我的</p>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  <script>
+    var json = [
+      {
+        img: "img/TV6.png",
+        title: "极限挑战",
+        content: "小岳岳“手撕”气球累瘫了",
+        type: "更新至第11期"
+      },
+      {
+        img: "img/TV2.png",
+        title: "小敏家 TV版",
+        content: "刘小敏陈卓解决各种难题",
+        type: "45集全"
+      },
+      {
+        img: "img/TV3.png",
+        title: "人民的名义",
+        content: "陆毅领衔上演反腐大战",
+        type: "52集全"
+      },
+      {
+        img: "img/TV4.png",
+        title: "星河长明",
+        content: "弃女成倾世皇妃",
+        type: "25集全"
+      },
+      {
+        img: "img/TV1.jpg",
+        title: "甄嬛传",
+        content: "嬛嬛，朕emo啦",
+        type: "73集全"
+      },
+      {
+        img: "img/TV7.png",
+        title: "长安十二时辰",
+        content: "雷佳音千玺携手护长安",
+        type: "48集全"
+      }
+    ];
+
+    var ul = document.getElementsByClassName("hot")[0].getElementsByTagName("ul")[0];
+
+    function addLI(li) {
+      var n = `
+            <a href="#"><img src="${li.img}"></a>
+            <div class="text">
+             <p id="type">${li.type}</p>
+            </div>
+            <a>${li.title}</a>
+            <p>${li.content}</p>
+        `;
+
+      var nli = document.createElement("li");
+      nli.innerHTML = n;
+      ul.appendChild(nli);
+    }
+
+    for (var i = 0; i < json.length; i++) {
+      addLI(json[i])
+    }
+
+
+
+    //tab选项卡
+    var t = document.getElementsByClassName("tab");
+
+    for (var i = 0; i < t.length; i++) {
+      tabs(t[i]);
+    }
+
+
+    function tabs(tab) {
+      var tt = tab.getElementsByClassName("tt")[0];
+      var span = tt.getElementsByTagName("span");
+      var tc = tab.getElementsByClassName("tc");
+
+      for (var i = 0; i < span.length; i++) {
+        span[i].index = i;
+
+        span[i].addEventListener('mouseover', function () {
+          for (var j = 0; j < span.length; j++) {
+            span[j].classList.remove("cur");
+            tc[j].classList.remove("show");
+          }
+
+          this.classList.add("cur");
+          tc[this.index].classList.add("show");
+        })
+      }
+    }
+  </script>
+</body>
+
+</html>

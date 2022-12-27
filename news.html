@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>张瀚月-20002120320</title>
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <style>
+        body,
+        ul,
+        li,
+        h3,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        span {
+            display: inline-block;
+        }
+
+        img {
+            display: block;
+            border: none;
+        }
+
+        /* footer样式 */
+        #footer #nav {
+            background-color: #fff;
+        }
+
+        #nav {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            z-index: 100;
+            display: flex;
+        }
+
+        #nav li {
+            margin-top: 6px;
+            width: 20%;
+            text-align: center;
+        }
+
+        #nav span {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #nav li:nth-child(4) a {
+            color: rgb(255, 0, 212);
+        }
+
+        #nav p {
+            font-size: 14px;
+        }
+
+        /* 顶部样式 head */
+        .headnav {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            display: flex;
+        }
+
+        .headnav span {
+            font-size: 20px;
+            color: #000;
+        }
+
+        .headnav>li:nth-of-type(1) {
+            margin-top: 6px;
+            width: 60%;
+            text-align: right;
+            font-size: 22px;
+        }
+
+        .headnav>li:nth-of-type(2) {
+            margin-top: 10px;
+            width: 40%;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        /* create样式 */
+        .create {
+            background-color: #fff;
+            margin: 0px 10px;
+            border-radius: 10px;
+            border: 1px solid rgb(255, 255, 255);
+            box-shadow: 0 0 10px rgba(138, 138, 138, 0.6);
+            margin-top: 80px;
+        }
+
+        .create ul {
+            display: flex;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .create li {
+            margin-top: 6px;
+            width: 25%;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .create p {
+            margin-top: 5px;
+        }
+
+        .create li:nth-of-type(3) p {
+            margin-top: 1px;
+        }
+
+        .create li:nth-of-type(4) p {
+            margin-top: 3px;
+        }
+
+        .create a {
+            color: #000;
+        }
+
+        .create span {
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .create li:last-child span {
+            padding: 10px;
+        }
+
+        .create li:nth-of-type(1) span {
+            color: #00cccc;
+            background-color: #00cccc1b;
+        }
+
+        .create li:nth-of-type(2) span {
+            font-size: 24px;
+            color: #f14925;
+            background-color: #f149251b;
+        }
+
+        .create li:nth-of-type(3) span {
+            background-color: #f9048f1b;
+            color: #f9048d;
+        }
+
+        .create li:nth-of-type(3) p {
+            /* display: block; */
+            margin-top: 6px;
+        }
+
+        .create li:nth-of-type(4) span {
+            font-size: 20px;
+            color: #ff8f00;
+            background-color: #ff8f001b;
+        }
+
+        .mlist {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .mlist li {
+            width: 100%;
+            margin-right: 5px;
+            flex-grow: 1;
+            margin-bottom: 10px;
+        }
+
+
+        .mlist img {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .mlist div {
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .mlist h3 {
+            font-weight: normal;
+            font-size: 16px;
+            margin-left: 90px;
+            margin-top: -55px;
+        }
+
+        .mlist p {
+            color: #888;
+            font-size: 14px;
+            padding-top: 4px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #888;
+            margin-left: 90px;
+        }
+
+        .mlist img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .time {
+            position: absolute;
+            right: 5px;
+            top: 8px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        #menu {
+            position: relative;
+        }
+
+        .ddown {
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            border-radius: 6px;
+            margin-right: 4px;
+            box-shadow: 0 0 10px rgba(138, 138, 138, 0.6);
+            display: none;
+        }
+
+        .ddown li {
+            padding: 8px 10px;
+            text-align: left;
+            color: #000;
+
+        }
+
+        .ddown>li:nth-of-type(1) {
+            border-bottom: 1px solid #666;
+        }
+
+        .ddown a {
+            color: #000;
+            font-size: 14px;
+        }
+
+        .ddown span {
+            font-size: 20px;
+            margin: 0 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <ul class="headnav">
+            <li>消息中心
+                <a href="#"><span class="iconfont icon-qinglihuancun"></span></a>
+            </li>
+            <li>
+                <div id="menu" class="menu">
+                    <a href="#" class=""><span class="iconfont icon-danlieliebiao"></span></a>
+                    <ul class="ddown">
+                        <!-- style="display: none;" -->
+                        <li>
+                            <a href="#"><span class="iconfont icon-pinglun"></span>发起聊天</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="iconfont icon-gengduo-shuxiang"></span>设置</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <div class="create">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-shequ1"></span>
+                        <p>粉丝</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-zanxuanzhong"></span>
+                        <p>赞</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-jianpan"></span>
+                        <p>弹幕</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont icon-pinglun1"></span>
+                        <p>评论</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="mlist">
+                <!-- <li>
+                    <div>
+                        <a href="#"><img src="img/news/toux2.jpg"></a>
+                        <span class="time">23:13</span>
+                    </div>
+                    <h3>优酷VIP会员</h3>
+                    <p>你的本周片单更新啦</p>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <div id="footer">
+        <ul id="nav">
+            <li>
+                <a href="index.html">
+                    <span class="iconfont icon-shouye"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="video.html">
+                    <span class="iconfont icon-shipin"></span>
+                    <p>短视频</p>
+                </a>
+            </li>
+            <li>
+                <a href="vip.html">
+                    <span class="iconfont icon-huiyuan1"></span>
+                    <p>会员</p>
+                </a>
+            </li>
+            <li>
+                <a href="news.html">
+                    <span class="iconfont icon-xiaoxizhongxin
+                  "></span>
+                    <p>消息</p>
+                </a>
+            </li>
+            <li>
+                <a href="my.html">
+                    <span class="iconfont icon-wode"></span>
+                    <p>我的</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <script>
+        var jarr = [
+            {
+                link: "#",
+                img: "img/toux2.jpg",
+                time: "23:13",
+                title: "优酷VIP会员",
+                content: "你的本周片单更新啦"
+            },
+            {
+                link: "#",
+                img: "img/toux3.jpg",
+                time: "2022/12/16",
+                title: "问卷调研",
+                content: "有奖问卷"
+            },
+            {
+                link: "#",
+                img: "img/toux4.jpg",
+                time: "上午10：02",
+                title: "优酷VIP会员",
+                content: "你的本周片单更新啦"
+            },
+            {
+                link: "#",
+                img: "img/toux5.jpg",
+                time: "23:13",
+                title: "优酷VIP会员",
+                content: "你的本周片单更新啦"
+            }
+        ];
+
+        var mlist = document.getElementsByClassName("mlist")[0];
+
+        jarr.forEach(function (v, i) {
+            var nli = document.createElement("li");
+            nli.innerHTML = `
+                <div>
+                    <a href="${v.link}"><img src="${v.img}"></a>
+                    <span class="time">${v.time}</span>
+                </div>
+                <h3>${v.title}</h3>
+                <p>${v.content}</p>
+            `;
+
+            // 在ul的内部最后插入li。
+            mlist.appendChild(nli);
+        })
+
+        //下拉菜单js
+        var menu = document.getElementsByClassName("menu")[0];
+        var a = menu.querySelector("a");
+
+        var ddown = menu.getElementsByTagName("ul")[0];
+        menu.onmouseover = function () {
+            ddown.style.display = "block";
+            a.className = "cur";
+        }
+        menu.onmouseout = function () {
+            ddown.style.display = "none";
+            a.className = "";
+        }
+
+    </script>
+</body>
+
+</html>
